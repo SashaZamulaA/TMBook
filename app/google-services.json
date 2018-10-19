@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "524520108488",
+    "firebase_url": "https://tmbook-b35f2.firebaseio.com",
+    "project_id": "tmbook-b35f2",
+    "storage_bucket": "tmbook-b35f2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524520108488:android:6d2635ad7d81b9d2",
+        "android_client_info": {
+          "package_name": "com.example.aleksandr.tmbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524520108488-td51ejmm82rifik1botccb994e3pdnhd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAce3c_q0xuTSdrOR4xcUr1DRyyqa0WfAg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="space_4">4dp</dimen>
+    <dimen name="space_6">6dp</dimen>
+    <dimen name="space_8">8dp</dimen>
+    <dimen name="space_10">10dp</dimen>
+    <dimen name="space_12">12dp</dimen>
+    <dimen name="space_14">14dp</dimen>
+    <dimen name="space_16">16dp</dimen>
+    <dimen name="space_18">18dp</dimen>
+    <dimen name="space_20">20dp</dimen>
+    <dimen name="space_22">22dp</dimen>
+    <dimen name="space_24">24dp</dimen>
+    <dimen name="space_26">26dp</dimen>
+    <dimen name="space_36">36dp</dimen>
+
+    <dimen name="detail_backdrop_height">170dp</dimen>
+    <dimen name="card_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="list_item_avatar_size">40dp</dimen>
+
+    // TEXT SIZE
+    <dimen name="caption_text_size">12sp</dimen>
+    <dimen name="body1_text_size">14sp</dimen>
+    <dimen name="subheader_text_size">14sp</dimen>
+    <dimen name="button_text_size">14sp</dimen>
+    <dimen name="body2_text_size">16sp</dimen>
+    <dimen name="title_text_size">20sp</dimen>
+    <dimen name="headline2_text_size">20sp</dimen>
+    <dimen name="headline_text_size">24sp</dimen>
+    <dimen name="numpad_text_size">24sp</dimen>
+    <dimen name="display1_text_size">34sp</dimen>
+    <dimen name="display2_text_size">45sp</dimen>
+    <dimen name="larger_text">18sp</dimen>
+    <dimen name="receipt_portrait_size">96dp</dimen>
+    <dimen name="negative_padding_edittext">-4dp</dimen>
+    <dimen name="receipt_item_height">48dp</dimen>
+    <dimen name="base_item_height">56dp</dimen>
+    <dimen name="margin_16_24">16dp</dimen>
+
+    // GLOBAL
+    <dimen name="parent_margin_edge">16dp</dimen>
+    <dimen name="checkbox_size">48dp</dimen>
+
+    // Toolbar
+    <dimen name="toolbar_title_margin">72dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="menu_icon_margin">8dp</dimen>
+    <dimen name="common_elevation">4dp</dimen>
+
+    // Buttons
+    <dimen name="icon_button_size">48dp</dimen>
+    <dimen name="icon_button_padding">12dp</dimen>
+    <dimen name="button_height">56dp</dimen>
+    <dimen name="button88_width">88dp</dimen>
+    <dimen name="padding_button_not_toolbar_8dp">8dp</dimen>
+    <dimen name="button_drawable_padding">12dp</dimen>
+    <dimen name="icon_button_margin">12dp</dimen>
+
+    // IMG
+    <dimen name="logo">200dp</dimen>
+
+    // Drawer header
+    <dimen name="drawer_logo">50dp</dimen>
+
+    // Card
+    <dimen name="card_width">684dp</dimen>
+    <dimen name="margin_top">8dp</dimen>
+    <dimen name="edge_margins">16dp</dimen>
+    <dimen name="space8">8dp</dimen>
+    <dimen name="icon_barcode_size">38dp</dimen>
+    <dimen name="space12">12dp</dimen>
+    <dimen name="touchable_list_container">56dp</dimen>
+    <dimen name="item_size_list">80dp</dimen>
+
+
+
+
+</resources>
