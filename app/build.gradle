@@ -48,11 +48,13 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-auth:3.3.1'
     implementation 'com.google.firebase:firebase-storage:15.0.2'
     implementation 'com.firebaseui:firebase-ui-storage:3.3.1'
+    implementation 'com.google.firebase:firebase-database:16.0.1'
     implementation 'com.google.android.gms:play-services-auth:15.0.1'
     implementation 'com.google.firebase:firebase-messaging:15.0.2'
     //glide
     implementation 'com.github.bumptech.glide:glide:4.6.1'
     kapt 'com.github.bumptech.glide:compiler:4.6.1'
+    kapt "android.arch.lifecycle:compiler:1.0.0"
     //groupie
     implementation 'com.xwray:groupie:2.0.3'
     implementation 'com.xwray:groupie-kotlin-android-extensions:2.0.3'
@@ -66,14 +68,13 @@ dependencies {
             coroutines "enable"
         }
     }
-
-
-
+    androidExtensions {
+        experimental = true
+    }
 
     kotlin {
         experimental {
             coroutines "enable"
         }
     }
-
 }

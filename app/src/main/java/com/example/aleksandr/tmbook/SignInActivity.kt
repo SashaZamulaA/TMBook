@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.example.aleksandr.tmbook.util.FirestoreUtil
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.ErrorCodes
 import com.firebase.ui.auth.IdpResponse
@@ -13,9 +14,6 @@ import org.jetbrains.anko.design.longSnackbar
 import org.jetbrains.anko.indeterminateProgressDialog
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.newTask
-import com.firebase.ui.auth.util.ExtraConstants
-import com.firebase.ui.auth.data.model.FlowParameters
-
 
 
 class SignInActivity : AppCompatActivity() {
@@ -42,11 +40,6 @@ class SignInActivity : AppCompatActivity() {
 
     }
 
-    fun fromIntent(intent: Intent): FlowParameters {
-        //this is required to fix #1416 - ClassNotFound for FlowParameters
-        intent.setExtrasClassLoader(AuthUI::class.java.classLoader)
-        return intent.getParcelableExtra(ExtraConstants.FLOW_PARAMS)
-    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -56,20 +49,22 @@ class SignInActivity : AppCompatActivity() {
 
             if (requestCode == Activity.RESULT_OK) {
                 val progressDialog = indeterminateProgressDialog("Setting up your account")
-//TODO fireBase
-                startActivity(intentFor<MainActivity>().newTask().clearTask())
-                progressDialog.dismiss()
-            } else if (resultCode == Activity.RESULT_CANCELED) {
-                if (response == null) return
+                FirestoreUtil.initCurrentUserIfFirstTime {
 
-                when (response.error?.errorCode){
+                    startActivity(intentFor<MainActivity>().newTask().clearTask())
+                    progressDialog.dismiss()
+                }
+            } else if (resultCode == Activity.RESULT_CANCELED) {
+                if (response == null)
+                    return
+
+                when (response.error?.errorCode) {
                     ErrorCodes.NO_NETWORK ->
                         longSnackbar(constraint_layout, "No network")
                     ErrorCodes.UNKNOWN_ERROR -> longSnackbar(constraint_layout, "Unknown error")
-                }
 
+                }
             }
         }
-
     }
 }

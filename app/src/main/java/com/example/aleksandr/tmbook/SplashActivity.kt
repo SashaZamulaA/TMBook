@@ -10,9 +10,9 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        if(FirebaseAuth.getInstance().currentUser == null) {
+        if (FirebaseAuth.getInstance().currentUser == null) {
             startActivity<SignInActivity>()
-        }else
+        } else
             startActivity<MainActivity>()
         finish()
     }
