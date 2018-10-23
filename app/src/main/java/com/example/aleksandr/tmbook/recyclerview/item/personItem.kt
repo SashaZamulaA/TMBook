@@ -9,7 +9,7 @@ import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import kotlinx.android.synthetic.main.item_person.*
 
-class personItem(val person: com.example.aleksandr.tmbook.model.User,
+class PersonItem(val person: com.example.aleksandr.tmbook.model.User,
                  val userId: String,
                  private val context: Context)
     : Item() {

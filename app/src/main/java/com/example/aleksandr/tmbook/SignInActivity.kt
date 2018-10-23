@@ -37,9 +37,7 @@ class SignInActivity : AppCompatActivity() {
                     .build()
             startActivityForResult(intent, RC_SING_IN)
         }
-
     }
-
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

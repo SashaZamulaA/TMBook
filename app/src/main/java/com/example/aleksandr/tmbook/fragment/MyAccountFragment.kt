@@ -56,7 +56,7 @@ class MyAccountFragment : Fragment() {
                             editText_bio.text.toString(), null)
                 toast("Saving")
             }
-            btn_sign_out.setOnClickListener {
+            btn_sign_out.setOnClickListener { _ ->
                 AuthUI.getInstance()
                         .signOut(this@MyAccountFragment.context!!)
                         .addOnCompleteListener {
