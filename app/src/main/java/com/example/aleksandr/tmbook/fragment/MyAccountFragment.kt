@@ -15,6 +15,8 @@ import com.example.aleksandr.tmbook.SignInActivity
 import com.example.aleksandr.tmbook.glade.GlideApp
 import com.example.aleksandr.tmbook.util.FirestoreUtil
 import com.example.aleksandr.tmbook.util.StorageUtil
+import com.facebook.FacebookSdk
+import com.facebook.FacebookSdk.getApplicationContext
 import com.firebase.ui.auth.AuthUI
 import kotlinx.android.synthetic.main.fragment_my_account.*
 import kotlinx.android.synthetic.main.fragment_my_account.view.*
@@ -33,6 +35,7 @@ class MyAccountFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
+        FacebookSdk.sdkInitialize(getApplicationContext());
         val view = inflater.inflate(R.layout.fragment_my_account, container, false)
 
         view.apply {
@@ -82,7 +85,6 @@ class MyAccountFragment : Fragment() {
             GlideApp.with(this)
                     .load(selectImageBytes)
                     .into(imageView_profile_picture)
-
 
             pictureJustChange = true
         }

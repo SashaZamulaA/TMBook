@@ -90,7 +90,7 @@
         <item>Quantity</item>
         <item>Skip</item>
     </array>
-
+    <string name="facebook_app_id">Facebook</string>
     <string name="city">City</string>
     <string name="signup_successful">Registration successful</string>
     <string name="incorrect_sing_in">Incorrect email or password. Please try again.</string>
