@@ -12,18 +12,18 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        FacebookSdk.sdkInitialize(applicationContext)
         setContentView(R.layout.activity_main)
 
-        replaseFragment(PeopleFragment())
+        replaceFragment(PeopleFragment())
+
         navigation.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.navigation_people -> {
-                    replaseFragment(PeopleFragment())
+                    replaceFragment(PeopleFragment())
                     true
                 }
                 R.id.navigation_my_account -> {
-                    replaseFragment(MyAccountFragment())
+                    replaceFragment(MyAccountFragment())
                     true
                 }
                 else -> false
@@ -31,10 +31,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun replaseFragment(fragment: Fragment) {
+    private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_layout, fragment)
                 .commit()
-
     }
 }

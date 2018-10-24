@@ -7,15 +7,19 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import com.example.aleksandr.tmbook.AppConstants
+import com.example.aleksandr.tmbook.ChatActivity
 import com.example.aleksandr.tmbook.R
+import com.example.aleksandr.tmbook.recyclerview.item.PersonItem
 import com.example.aleksandr.tmbook.util.FirestoreUtil
 import com.google.firebase.firestore.ListenerRegistration
 import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.OnItemClickListener
 import com.xwray.groupie.Section
 import com.xwray.groupie.ViewHolder
 import com.xwray.groupie.kotlinandroidextensions.Item
 import kotlinx.android.synthetic.main.fragment_people.*
+import org.jetbrains.anko.support.v4.startActivity
 
 class PeopleFragment : Fragment() {
 
@@ -47,19 +51,27 @@ class PeopleFragment : Fragment() {
                 adapter = GroupAdapter<ViewHolder>().apply {
                     peopleSection = Section(items)
                     add(peopleSection)
+                    setOnItemClickListener(onItemClick)
                 }
             }
             shouldInitRecyclerView = false
         }
 
-        fun updateItem() {
-
-        }
+        fun updateItem() = peopleSection.update(items)
 
         if (shouldInitRecyclerView)
             init()
         else
             updateItem()
+    }
+
+    private val onItemClick = OnItemClickListener { item, view ->
+        if (item is PersonItem) {
+            startActivity<ChatActivity>(
+                    AppConstants.USER_NAME to item.person.name,
+                    AppConstants.USER_ID to item.userId
+            )
+        }
     }
 
 }

@@ -43,8 +43,7 @@ dependencies {
     implementation "org.jetbrains.anko:anko-design:$anko_version"
     implementation "org.jetbrains.anko:anko-coroutines:$anko_version"
     //firebase
-
-    implementation 'com.facebook.android:facebook-android-sdk:4.15.0'
+    implementation 'com.facebook.android:facebook-android-sdk:4.22.1'
     implementation 'com.google.firebase:firebase-core:16.0.4'
     implementation 'com.google.firebase:firebase-firestore:17.1.1'
     implementation 'com.google.firebase:firebase-auth:16.0.5'
