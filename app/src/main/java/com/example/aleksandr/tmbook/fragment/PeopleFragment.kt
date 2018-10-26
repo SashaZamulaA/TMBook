@@ -1,6 +1,7 @@
 package com.example.aleksandr.tmbook.fragment
 
 
+
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -16,10 +17,11 @@ import com.google.firebase.firestore.ListenerRegistration
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.OnItemClickListener
 import com.xwray.groupie.Section
-import com.xwray.groupie.ViewHolder
 import com.xwray.groupie.kotlinandroidextensions.Item
+import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import kotlinx.android.synthetic.main.fragment_people.*
 import org.jetbrains.anko.support.v4.startActivity
+
 
 class PeopleFragment : Fragment() {
 
@@ -32,7 +34,9 @@ class PeopleFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
-        userListenerRegistration = FirestoreUtil.addUsersListener(this.activity!!, this::updateRecyclerView)
+        userListenerRegistration =
+                FirestoreUtil.addUsersListener(this.activity!!, this::updateRecyclerView)
+
         return inflater.inflate(R.layout.fragment_people, container, false)
     }
 
@@ -40,7 +44,6 @@ class PeopleFragment : Fragment() {
         super.onDestroyView()
         FirestoreUtil.removeListener(userListenerRegistration)
         shouldInitRecyclerView = true
-
     }
 
     private fun updateRecyclerView(items: List<Item>) {
@@ -57,12 +60,13 @@ class PeopleFragment : Fragment() {
             shouldInitRecyclerView = false
         }
 
-        fun updateItem() = peopleSection.update(items)
+        fun updateItems() = peopleSection.update(items)
 
         if (shouldInitRecyclerView)
             init()
         else
-            updateItem()
+            updateItems()
+
     }
 
     private val onItemClick = OnItemClickListener { item, view ->

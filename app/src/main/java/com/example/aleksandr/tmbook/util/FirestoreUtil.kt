@@ -2,10 +2,7 @@ package com.example.aleksandr.tmbook.util
 
 import android.content.Context
 import android.util.Log
-import com.example.aleksandr.tmbook.model.ChatChannel
-import com.example.aleksandr.tmbook.model.MessageType
-import com.example.aleksandr.tmbook.model.TextMessage
-import com.example.aleksandr.tmbook.model.User
+import com.example.aleksandr.tmbook.model.*
 import com.example.aleksandr.tmbook.recyclerview.item.PersonItem
 import com.example.aleksandr.tmbook.recyclerview.item.TextMessageItem
 import com.google.firebase.auth.FirebaseAuth
@@ -30,8 +27,7 @@ object FirestoreUtil {
                 currentUserDocRef.set(newUser).addOnSuccessListener {
                     onComplete()
                 }
-            }
-            else
+            } else
                 onComplete()
         }
     }
@@ -62,11 +58,10 @@ object FirestoreUtil {
 
                     val items = mutableListOf<Item>()
                     querySnapshot?.documents?.forEach {
-                        if (it.id != FirebaseAuth.getInstance().currentUser?.uid) {
+                        if (it.id != FirebaseAuth.getInstance().currentUser?.uid)
                             items.add(PersonItem(it.toObject(User::class.java)!!, it.id, context))
-                        }
-                        onListen(items)
                     }
+                    onListen(items)
                 }
     }
 
@@ -114,9 +109,15 @@ object FirestoreUtil {
                     querySnapshot?.documents?.forEach {
                         if (it["type"] == MessageType.TEXT)
                             items.add(TextMessageItem(it.toObject(TextMessage::class.java)!!, context))
-                        else{ }
+                        else {
+                        }
                     }
                     onListen(items)
                 }
+    }
+    fun sendMessage(message:Message, channelId: String){
+        chatChannelsCollectionRef.document(channelId)
+                .collection("messages")
+                .add(message)
     }
 }

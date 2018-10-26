@@ -4,12 +4,12 @@ import android.content.Context
 import com.example.aleksandr.tmbook.R
 import com.example.aleksandr.tmbook.glade.GlideApp
 import com.example.aleksandr.tmbook.util.StorageUtil
-import com.firebase.ui.auth.data.model.User
+import com.example.aleksandr.tmbook.model.User
 import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import kotlinx.android.synthetic.main.item_person.*
 
-class PersonItem(val person: com.example.aleksandr.tmbook.model.User,
+class PersonItem(val person: User,
                  val userId: String,
                  private val context: Context)
     : Item() {
