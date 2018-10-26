@@ -3,6 +3,7 @@ package com.example.aleksandr.tmbook.util
 import android.content.Context
 import android.util.Log
 import com.example.aleksandr.tmbook.model.*
+import com.example.aleksandr.tmbook.recyclerview.item.ImageMessageItem
 import com.example.aleksandr.tmbook.recyclerview.item.PersonItem
 import com.example.aleksandr.tmbook.recyclerview.item.TextMessageItem
 import com.google.firebase.auth.FirebaseAuth
@@ -60,6 +61,8 @@ object FirestoreUtil {
                     querySnapshot?.documents?.forEach {
                         if (it.id != FirebaseAuth.getInstance().currentUser?.uid)
                             items.add(PersonItem(it.toObject(User::class.java)!!, it.id, context))
+                        else
+                            return@forEach
                     }
                     onListen(items)
                 }
@@ -109,15 +112,19 @@ object FirestoreUtil {
                     querySnapshot?.documents?.forEach {
                         if (it["type"] == MessageType.TEXT)
                             items.add(TextMessageItem(it.toObject(TextMessage::class.java)!!, context))
-                        else {
-                        }
+                        else
+                            items.add(ImageMessageItem(it.toObject(ImageMessage::class.java)!!, context))
+                        return@forEach
+
                     }
                     onListen(items)
                 }
     }
-    fun sendMessage(message:Message, channelId: String){
+
+    fun sendMessage(message: Message, channelId: String) {
         chatChannelsCollectionRef.document(channelId)
                 .collection("messages")
                 .add(message)
     }
 }
+
