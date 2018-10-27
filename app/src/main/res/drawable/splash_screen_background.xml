@@ -4,8 +4,9 @@
     <item android:drawable="@android:color/white"/>
 
     <item>
-        <bitmap android:src="@drawable/ic_angel_clipart_christmas_1"/>
-
+        <bitmap android:src="@drawable/ic_how_to_draw_an_angel_17"
+        android:gravity="center"
+            />
     </item>
 
 </layer-list>
