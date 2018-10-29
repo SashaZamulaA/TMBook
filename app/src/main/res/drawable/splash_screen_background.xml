@@ -4,7 +4,7 @@
     <item android:drawable="@android:color/white"/>
 
     <item>
-        <bitmap android:src="@drawable/ic_how_to_draw_an_angel_17"
+        <bitmap android:src="@drawable/ic_agel_kris"
         android:gravity="center"
             />
     </item>

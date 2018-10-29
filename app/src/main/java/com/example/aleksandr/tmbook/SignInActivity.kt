@@ -36,7 +36,7 @@ class SignInActivity : AppCompatActivity() {
         account_sign_in.setOnClickListener {
             val intent = AuthUI.getInstance().createSignInIntentBuilder()
                     .setAvailableProviders(signInProviders)
-                    .setLogo(R.drawable.ic_how_to_draw_an_angel_17)
+                    .setLogo(R.drawable.ic_agel_kris)
                     .build()
             startActivityForResult(intent, RC_SIGN_IN)
         }
